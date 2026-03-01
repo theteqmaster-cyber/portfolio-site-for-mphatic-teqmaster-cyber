@@ -1,0 +1,222 @@
+/* ===== Hydra Space — separate entity, distinct from main portfolio ===== */
+
+.hydra-space-page {
+  background: #0a0a0e;
+  color: #e4e4e7;
+}
+
+/* Cursor-follow glow (position updated by JS) */
+.hydra-cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  margin-left: -200px;
+  margin-top: -200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.hydra-cursor-glow.ready { opacity: 1; }
+.hydra-space-page.reduce-motion .hydra-cursor-glow {
+  display: none;
+}
+
+/* ----- Header: Hydra Space only ----- */
+.hydra-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  background: rgba(10, 10, 14, 0.85);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.12);
+}
+.hydra-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hydra-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #22c55e;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.hydra-brand:hover { color: #4ade80; }
+.hydra-back {
+  font-size: 0.875rem;
+  color: #71717a;
+  text-decoration: none;
+}
+.hydra-back:hover { color: #a1a1aa; }
+
+/* ----- Hero ----- */
+.hydra-main { position: relative; z-index: 1; }
+.hydra-hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+.hydra-hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.hydra-title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.hydra-tagline {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #22c55e;
+  letter-spacing: 0.05em;
+}
+
+/* ----- Sections ----- */
+.hydra-section {
+  padding: 4rem 0;
+}
+.hydra-section-alt {
+  background: rgba(34, 197, 94, 0.04);
+  border-top: 1px solid rgba(34, 197, 94, 0.08);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.08);
+}
+.hydra-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+.hydra-section-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.hydra-section-lead {
+  margin: 0 0 2rem;
+  color: #a1a1aa;
+  font-size: 1rem;
+}
+
+/* ----- Cards with mouse-follow border glow (vars set by JS) ----- */
+.hydra-card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.hydra-card {
+  position: relative;
+  border-radius: 0.75rem;
+  background: rgba(15, 15, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hydra-space-page.reduce-motion .hydra-card {
+  transition: none;
+}
+/* Moving gradient border via pseudo-element (mouse position from JS) */
+.hydra-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(34, 197, 94, 0.35) 0%,
+    rgba(34, 197, 94, 0.08) 40%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.hydra-card:hover::before,
+.hydra-card:focus-within::before {
+  opacity: 1;
+}
+.hydra-space-page.reduce-motion .hydra-card::before {
+  display: none;
+}
+.hydra-card-link {
+  display: block;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease;
+}
+.hydra-card-link:hover { background: rgba(34, 197, 94, 0.05); }
+.hydra-card-link:focus-visible { outline: 2px solid #22c55e; outline-offset: 2px; }
+.hydra-card-icon {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.hydra-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+}
+.hydra-card p {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #a1a1aa;
+  line-height: 1.5;
+}
+
+/* Subtle scale on hover (Hydra-specific, no tilt) */
+.hydra-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+}
+.hydra-space-page.reduce-motion .hydra-card:hover {
+  transform: none;
+}
+
+/* ----- Footer ----- */
+.hydra-footer {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(10, 10, 14, 0.9);
+}
+.hydra-footer-brand {
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+  color: #22c55e;
+  font-size: 0.9375rem;
+}
+.hydra-footer-link {
+  font-size: 0.8125rem;
+  color: #71717a;
+  text-decoration: none;
+}
+.hydra-footer-link:hover { color: #a1a1aa; }
+
+/* ----- Mobile ----- */
+@media (max-width: 640px) {
+  .hydra-hero { padding: 5rem 0 3rem; }
+  .hydra-section { padding: 3rem 0; }
+  .hydra-card-list { grid-template-columns: 1fr; }
+}

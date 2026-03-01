@@ -3,48 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Hydra Space — Mphatic Teqmaster Cyber" />
-  <title>Hydra Space — Mphatic Teqmaster Cyber</title>
+  <meta name="description" content="Hydra Space — Library, presentations, and video tutorials." />
+  <title>Hydra Space</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="hydra-space.css" />
 </head>
-<body>
-  <header class="site-header sticky">
-    <nav class="container nav">
-      <a href="index.html" class="nav-brand">Mphatic</a>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+<body class="hydra-space-page">
+  <div class="hydra-cursor-glow" id="hydraCursorGlow" aria-hidden="true"></div>
+
+  <header class="hydra-header">
+    <div class="hydra-header-inner">
+      <a href="hydra-space.html" class="hydra-brand">Hydra Space</a>
+      <a href="index.html" class="hydra-back">← Portfolio</a>
+    </div>
   </header>
 
-  <main>
-    <section class="page-header">
-      <div class="container">
-        <h1>Hydra Space</h1>
-        <p>Sir Mphatic · Teqmaster Cyber · Hydramnt</p>
+  <main class="hydra-main">
+    <section class="hydra-hero">
+      <div class="hydra-hero-inner">
+        <h1 class="hydra-title">Hydra Space</h1>
+        <p class="hydra-tagline">Library · Presentations · Video Tutorials</p>
       </div>
     </section>
-    <section class="page-content">
-      <div class="container">
-        <!-- EDIT: add your Hydra Space content here -->
-        <p class="section-lead">Your space. Add whatever you want this page to be — blog, links, experiments, or a dedicated hub.</p>
-        <div class="card">
-          <h3>Welcome to Hydra Space</h3>
-          <p>Replace this with your own content. Same design system as the rest of the portfolio.</p>
-        </div>
+
+    <section class="hydra-section" id="myota-library">
+      <div class="hydra-container">
+        <h2 class="hydra-section-title">Myota Library</h2>
+        <p class="hydra-section-lead">Books and resources. Replace links with your own Google Drive files.</p>
+        <ul class="hydra-card-list">
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://drive.google.com/file/d/1EXAMPLE_BOOK_1/view" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📖</span>
+              <h3>Sample Book One</h3>
+              <p>Replace with your book title and Drive link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://drive.google.com/file/d/2EXAMPLE_BOOK_2/view" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📖</span>
+              <h3>Sample Book Two</h3>
+              <p>Replace with your book title and Drive link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://drive.google.com/file/d/3EXAMPLE_BOOK_3/view" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📖</span>
+              <h3>Sample Book Three</h3>
+              <p>Replace with your book title and Drive link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://drive.google.com/file/d/4EXAMPLE_BOOK_4/view" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📖</span>
+              <h3>Sample Book Four</h3>
+              <p>Replace with your book title and Drive link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://drive.google.com/file/d/5EXAMPLE_BOOK_5/view" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📖</span>
+              <h3>Sample Book Five</h3>
+              <p>Replace with your book title and Drive link.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hydra-section hydra-section-alt" id="presentations">
+      <div class="hydra-container">
+        <h2 class="hydra-section-title">Presentations</h2>
+        <p class="hydra-section-lead">Modern web presentations. Replace with your Google Slides or other links.</p>
+        <ul class="hydra-card-list">
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://docs.google.com/presentation/d/1EXAMPLE_SLIDES_1/edit" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📽️</span>
+              <h3>Sample Presentation One</h3>
+              <p>Replace with your deck title and link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://docs.google.com/presentation/d/2EXAMPLE_SLIDES_2/edit" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📽️</span>
+              <h3>Sample Presentation Two</h3>
+              <p>Replace with your deck title and link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://docs.google.com/presentation/d/3EXAMPLE_SLIDES_3/edit" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📽️</span>
+              <h3>Sample Presentation Three</h3>
+              <p>Replace with your deck title and link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://docs.google.com/presentation/d/4EXAMPLE_SLIDES_4/edit" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📽️</span>
+              <h3>Sample Presentation Four</h3>
+              <p>Replace with your deck title and link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://docs.google.com/presentation/d/5EXAMPLE_SLIDES_5/edit" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">📽️</span>
+              <h3>Sample Presentation Five</h3>
+              <p>Replace with your deck title and link.</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hydra-section" id="video-tutorials">
+      <div class="hydra-container">
+        <h2 class="hydra-section-title">Video Tutorials</h2>
+        <p class="hydra-section-lead">Sample YouTube links — replace with your channel videos.</p>
+        <ul class="hydra-card-list">
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">🎬</span>
+              <h3>Sample Video One</h3>
+              <p>Replace with your video title and YouTube link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://www.youtube.com/watch?v=jNQXAC9IVRw" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">🎬</span>
+              <h3>Sample Video Two</h3>
+              <p>Replace with your video title and YouTube link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://www.youtube.com/watch?v=9bZkp7q19f0" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">🎬</span>
+              <h3>Sample Video Three</h3>
+              <p>Replace with your video title and YouTube link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://www.youtube.com/watch?v=OPf0YbXqDm0" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">🎬</span>
+              <h3>Sample Video Four</h3>
+              <p>Replace with your video title and YouTube link.</p>
+            </a>
+          </li>
+          <li class="hydra-card" data-hydra-card>
+            <a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target="_blank" rel="noopener" class="hydra-card-link">
+              <span class="hydra-card-icon" aria-hidden="true">🎬</span>
+              <h3>Sample Video Five</h3>
+              <p>Replace with your video title and YouTube link.</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-brand">Mphatic — Teqmaster Cyber · Hydramnt</p>
-      <p class="footer-copy">Portfolio site. Professional, simple, clean.</p>
+  <footer class="hydra-footer">
+    <div class="hydra-container">
+      <p class="hydra-footer-brand">Hydra Space</p>
+      <a href="index.html" class="hydra-footer-link">Back to portfolio</a>
     </div>
   </footer>
+
+  <script src="hydra-space.js"></script>
 </body>
 </html>
