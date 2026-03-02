@@ -219,7 +219,7 @@
   background: #000;
   border-radius: 0.75rem 0.75rem 0 0;
 }
-.hydra-video-embed iframe {
+.hydra-video-embed iframe, .hydra-video-embed video {
   position: absolute;
   top: 0;
   left: 0;
