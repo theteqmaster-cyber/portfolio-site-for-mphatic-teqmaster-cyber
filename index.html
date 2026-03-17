@@ -1,18 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Sir Mphatic — Teqmaster Cyber / Hydramnt. Professional, clean showcase of skills, projects, and services." />
-  <meta name="author" content="Mphatic Teqmaster Cyber" />
-  <title>Mphatic — Teqmaster Cyber | Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mphathisi Ndlovu | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel" src="app.js"></script>
+    <div class="bg-glow"></div>
+
+    <nav class="nav">
+        <a href="#hero" class="active">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero reveal">
+            <span class="badge">Open for Professional Work & Freelance</span>
+            <h1 class="hero-title">Mphathisi Ndlovu</h1>
+            <p class="hero-subtitle">Crafting Secure, Scalable Digital Solutions. Specialized in Programming, IT Support, and Cybersecurity.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid">
+                <div class="card reveal">
+                    <h3>Returni</h3>
+                    <p>A comprehensive POS and Ledger management system designed for small to medium businesses. Streamlining transactions and financial tracking with ease.</p>
+                    <a href="https://returni-backpay-app.vercel.app/" target="_blank" class="card-link">Visit Project ↗</a>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.1s;">
+                    <h3>returny</h3>
+                    <p>Advanced recovery and tracking solution. Built with reliability in mind to ensure assets are managed and monitored effectively.</p>
+                    <a href="https://returny.vercel.app" target="_blank" class="card-link">Visit Project ↗</a>
+                </div>
+                <div class="card reveal" style="animation-delay: 0.2s;">
+                    <h3>hydraspace</h3>
+                    <p>Next-generation digital collaboration platform. Empowering teams to work together seamlessly in a secure and intuitive environment.</p>
+                    <a href="https://hydra-space-7o8u.vercel.app/" target="_blank" class="card-link">Visit Project ↗</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Programming (React, Node.js, Python)</div>
+                <div class="skill-tag">IT Support & System Admin</div>
+                <div class="skill-tag">Cybersecurity (Auditing & Pen-testing)</div>
+                <div class="skill-tag">Network Infrastructure</div>
+                <div class="skill-tag">Database Management</div>
+                <div class="skill-tag">Cloud Solutions (Vercel, AWS)</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="text-align: center;">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="hero-subtitle" style="margin: 0 auto 2.5rem;">I'm always looking for new challenges and opportunities to collaborate.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+                <a href="mailto:theteqmaster@gmail.com" class="btn btn-primary">theteqmaster@gmail.com</a>
+                <a href="mailto:ndlovumphathisi23@gmail.com" class="btn btn-secondary">ndlovumphathisi23@gmail.com</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--glass-border);">
+        <p style="margin-bottom: 0.5rem;">+263 787 146 103</p>
+        <p>&copy; 2026 Mphathisi Ndlovu. Built with precision.</p>
+    </footer>
+
+    <script>
+        // Simple reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth nav highlight
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href').includes(current)) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
